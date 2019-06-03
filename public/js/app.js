@@ -27,7 +27,7 @@ weatherForm.addEventListener('submit', function(e) {
     
     const location = search.value
     fetch('/weather?address=' + location).then(function(response){
-        response.json().then((data) => {
+        response.json().then(function(data) {
             if (data.error) {
                 document.querySelector('table').style = 'visibility: hidden;'
                 console.log(data.error)
