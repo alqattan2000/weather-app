@@ -7,6 +7,8 @@ const forecast = require('./utils/forecast')
 
 var datetime = new Date();
 const app = express()
+const port =process.env.PORT || 3000
+
 // Define path for Express Config
 const publicDirectoryPath = path.join(__dirname, '..', 'public')
 const viewPath = path.join(__dirname, '..', 'temp', 'views')
@@ -112,6 +114,6 @@ app.get('*', (req, res) => {
         errorMessage: 'Page Not Found'
     })
 })
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port +'.')
 })
