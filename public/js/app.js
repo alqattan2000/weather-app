@@ -22,11 +22,11 @@ const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const searchButton = document.querySelector('#searchBtn')
 
-weatherForm.addEventListener('submit', (e) => {
+weatherForm.addEventListener('submit', function(e) {
     e.preventDefault()
     
     const location = search.value
-    fetch('/weather?address=' + location).then((response) => {
+    fetch('/weather?address=' + location).then(function(response){
         response.json().then((data) => {
             if (data.error) {
                 document.querySelector('table').style = 'visibility: hidden;'
