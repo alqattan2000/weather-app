@@ -70,8 +70,8 @@ app.get('/weather', (req, res) => {
                 return res.send({error})
             }
 
-            console.log(latitude, longitude, Place_Name)
-            console.log(result)
+            // console.log(latitude, longitude, Place_Name)
+            // console.log(result)
             res.send({
                 latitude,
                 longitude,

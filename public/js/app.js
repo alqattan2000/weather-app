@@ -33,20 +33,21 @@ weatherForm.addEventListener('submit', function(e) {
                 console.log(data.error)
                 alert(data.error)
             } else {
+                
                 document.querySelector('table').style = 'visibility: visible;'
                 // console.log(data.latitude)
                 // console.log(data.longitude)
-                console.log(data.Place_Name)
+                // console.log(data.Place_Name)
                 document.querySelector('#cityName').textContent = data.Place_Name
-                console.log(data.result.summary)
+                // console.log(data.result.summary)
                 document.querySelector('#citySummery').textContent = data.result.summary
                 // console.log(data.result.precipType)
-                console.log(data.result.temperature)
+                // console.log(data.result.temperature)
                 document.querySelector('#cityTemp').textContent = data.result.temperature
             }
             //console.log(data)
         })
     })
-    searchButton.textContent = 'Search'
+    
 
 })
