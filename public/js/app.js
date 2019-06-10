@@ -23,6 +23,7 @@ const search = document.querySelector('input')
 const searchButton = document.querySelector('#searchBtn')
 
 weatherForm.addEventListener('submit', function(e) {
+    document.querySelector('#Message1').textContent = 'Searching...'
     e.preventDefault()
     
     const location = search.value
@@ -31,11 +32,11 @@ weatherForm.addEventListener('submit', function(e) {
             if (data.error) {
                 document.querySelector('table').style = 'visibility: hidden;'
                 console.log(data.error)
-                alert(data.error)
+                document.querySelector('#Message1').textContent = data.error
             } else {
-                
+                document.querySelector('#Message1').textContent = data.result.daily.summary
                 document.querySelector('table').style = 'visibility: visible;'
-                // console.log(data.latitude)
+                // console.log(data.latitude)no
                 // console.log(data.longitude)
                 // console.log(data.Place_Name)
                 document.querySelector('#cityName').textContent = data.Place_Name
