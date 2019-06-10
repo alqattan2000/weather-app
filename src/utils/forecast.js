@@ -11,7 +11,8 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('invalid City Name')
         } else
-            callback(undefined, body.currently)
+            callback(undefined, body)
+            console.log(body)
     })
 }
 module.exports = forecast
